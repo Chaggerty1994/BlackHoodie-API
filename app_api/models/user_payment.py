@@ -6,7 +6,7 @@ class UserPayment(models.Model):
         User, on_delete=models.CASCADE, related_name='payment_types')
     card_number = models.CharField(max_length=16)
     exp_date = models.CharField(max_length=5)
-    cvv = models.IntegerField(max_length=3)
+    cvv = models.IntegerField()
 
     @property
     def obscured_num(self):

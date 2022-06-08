@@ -10,6 +10,7 @@ class Order(models.Model):
     completed_on = models.DateTimeField(null=True, blank=True)
     products = models.ManyToManyField(
         "Product", through="OrderProduct", related_name='orders')
+    address = models.CharField(max_length=500)
 
     @property
     def total(self):

@@ -1,0 +1,45 @@
+[
+    {
+        "model": "app_api.userpayment",
+        "pk": 1,
+        "fields": {
+            "user": 1,
+            "card_number": 1234481234,
+            "exp_date": "12/25",
+            "cvv": 455
+        }
+    },
+
+    {
+        "model": "app_api.userpayment",
+        "pk": 2,
+        "fields": {
+            "user": 2,
+            "card_number": 1456231435,
+            "exp_date": "1/24",
+            "cvv": 333
+        }
+    },
+
+    {
+        "model": "app_api.userpayment",
+        "pk": 3,
+        "fields": {
+            "user": 3,
+            "card_number": 4445128769,
+            "exp_date": "12/25",
+            "cvv": 333
+        }
+    },
+
+    {
+        "model": "app_api.userpayment",
+        "pk": 4,
+        "fields": {
+            "user": 4,
+            "card_number": 1222451222,
+            "exp_date": "12/25",
+            "cvv": 555
+        }
+    }
+]

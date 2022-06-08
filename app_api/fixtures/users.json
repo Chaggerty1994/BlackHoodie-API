@@ -1,0 +1,53 @@
+[
+    {
+        "model": "auth.user",
+        "pk": 1,
+        "fields": {
+            "first_name": "Spooky",
+            "last_name": "Spooky",
+            "email": "Spooky@gmail.com",
+            "username": "Lil-Spooky",
+            "password": "spooky",
+            "is_staff": false
+        }
+    },
+
+    {
+        "model": "auth.user",
+        "pk": 2,
+        "fields": {
+            "first_name": "Blinky",
+            "last_name": "Blinky",
+            "email": "Blinky@gmail.com",
+            "username": "Lil-Blinky",
+            "password": "blinky",
+            "is_staff": false
+        }
+    },
+
+    {
+        "model": "auth.user",
+        "pk": 3,
+        "fields": {
+            "first_name": "Tiny",
+            "last_name": "Tiny",
+            "email": "BigTiny@gmail.com",
+            "username": "BigTiny",
+            "password": "tiny",
+            "is_staff": false
+        }
+    },
+
+    {
+        "model": "auth.user",
+        "pk": 4,
+        "fields": {
+            "first_name": "Since",
+            "last_name": "When",
+            "email": "SinceWhen?@gmail.com",
+            "username": "SinceWhen?",
+            "password": "since",
+            "is_staff": true
+        }
+    }
+]

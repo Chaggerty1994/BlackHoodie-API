@@ -1,0 +1,49 @@
+[
+    {
+        "model": "app_api.size",
+        "pk": 1,
+        "fields": {
+            "size": "S"
+        }
+    },
+
+    {
+        "model": "app_api.size",
+        "pk": 2,
+        "fields": {
+            "size": "M"
+        }
+    },
+
+    {
+        "model": "app_api.size",
+        "pk": 3,
+        "fields": {
+            "size": "L"
+        }
+    },
+
+    {
+        "model": "app_api.size",
+        "pk": 4,
+        "fields": {
+            "size": "XL"
+        }
+    },
+
+    {
+        "model": "app_api.size",
+        "pk": 5,
+        "fields": {
+            "size": "XXL"
+        }
+    },
+
+    {
+        "model": "app_api.size",
+        "pk": 6,
+        "fields": {
+            "size": "XXXL"
+        }
+    }
+]

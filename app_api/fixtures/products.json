@@ -1,0 +1,49 @@
+[
+    {
+        "model": "app_api.product",
+        "pk": 1,
+        "fields": {
+            "title": "Kafka is famous",
+            "price": 40.00,
+            "category": 5,
+            "image_path": "products/KAFKA.jpg"
+        }
+
+    },
+
+    {
+        "model": "app_api.product",
+        "pk": 2,
+        "fields": {
+            "title": "Scribbles In July",
+            "price": 40.00,
+            "category": 5,
+            "image_path": "products/scribble.jpg"
+        }
+
+    },
+
+    {
+        "model": "app_api.product",
+        "pk": 3,
+        "fields": {
+            "title": "Tha Godfather",
+            "price": 40.00,
+            "category": 5,
+            "image_path": "products/ThaGodfather.jpg"
+        }
+
+    },
+
+    {
+        "model": "app_api.product",
+        "pk": 4,
+        "fields": {
+            "title": "NYNY",
+            "price": 40.00,
+            "category": 4,
+            "image_path": "products/NYNY.jpg"
+        }
+
+    }
+]
