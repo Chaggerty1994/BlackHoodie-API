@@ -23,7 +23,8 @@ from app_api.views import ProductView
 from app_api.views import OrderView
 from app_api.views import SizeView
 from app_api.views import UserPaymentView
-
+from django.conf.urls.static import static
+from django.conf import settings
 router = routers.DefaultRouter(trailing_slash=False)
 router.register(r'categories', CategoryView, 'category')
 router.register(r'products', ProductView, 'product')
@@ -38,4 +39,4 @@ urlpatterns = [
     path('register', register_user),
     path('login', login_user),
     path('', include(router.urls)),
-]
+] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
