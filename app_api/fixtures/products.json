@@ -45,5 +45,41 @@
             "image_path": "products/NYNY.jpg"
         }
 
+    },
+
+    {
+        "model": "app_api.product",
+        "pk": 5,
+        "fields": {
+            "title": "Into Tha Void",
+            "price": 40.00,
+            "category": 4,
+            "image_path": "products/techgirl.jpg"
+        }
+
+    },
+
+    {
+        "model": "app_api.product",
+        "pk": 6,
+        "fields": {
+            "title": "Flux Dominion",
+            "price": 40.00,
+            "category": 4,
+            "image_path": "products/FluxDominion.jpg"
+        }
+
+    },
+
+    {
+        "model": "app_api.product",
+        "pk": 7,
+        "fields": {
+            "title": "Vastness",
+            "price": 40.00,
+            "category": 4,
+            "image_path": "products/vastness.jpg"
+        }
+
     }
 ]
