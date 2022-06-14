@@ -3,7 +3,7 @@
         "model": "app_api.userpayment",
         "pk": 1,
         "fields": {
-            "user": 1,
+            "user": 7,
             "card_number": 1234481234,
             "exp_date": "12/25",
             "cvv": 455

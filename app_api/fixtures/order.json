@@ -4,7 +4,7 @@
         "pk": 1,
         "fields": {
             "user_payment": 1,
-            "user": 1,
+            "user": 7,
             "created_on": "2020-08-29T13:24:27",
             "completed_on": "2020-09-01T10:24:27",
             "products": [1,2,3],
