@@ -5,6 +5,7 @@ from rest_framework import status
 from rest_framework.decorators import action
 
 from app_api.models import Order, UserPayment
+from app_api.models.order_product import OrderProduct
 from app_api.serializers import OrderSerializer
 
 
@@ -30,14 +31,15 @@ class OrderView(ViewSet):
         except Order.DoesNotExist as ex:
             return Response({'message': ex.args[0]}, status=status.HTTP_404_NOT_FOUND)
 
-    @action(methods=['put'], detail=True)
-    def complete(self, request, pk):
+    @action(methods=['post'], detail=False)
+    def complete(self, request):
         """Complete an order by adding a payment type and completed data
         """
         try:
-            order = Order.objects.get(pk=pk, user=request.auth.user)
+            order = Order.objects.create( user=request.auth.user)
+            order.products.add(*request.data["products"])
             user_payment = UserPayment.objects.get(
-                pk=request.data['userPaymentId'], customer=request.auth.user)
+                pk=request.data['userPaymentId'], user=request.auth.user)
             order.user_payment = user_payment
             order.completed_on = datetime.now()
             order.save()

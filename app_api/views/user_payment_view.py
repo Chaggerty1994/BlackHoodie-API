@@ -19,8 +19,9 @@ class UserPaymentView(ViewSet):
         """Create a payment type for the current user"""
         try:
             user_payment = UserPayment.objects.create(
-                customer=request.auth.user,
+                user=request.auth.user,
                 card_number=request.data['cardNumber'],
+                exp_date=request.data['expDate'],
 
             )
             serializer = UserPaymentSerializer(user_payment)

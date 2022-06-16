@@ -8,7 +8,7 @@ class OrderSerializer(serializers.ModelSerializer):
     user_payment = UserPaymentSerializer()
     class Meta:
         model = Order
-        fields = ('id', 'products', 'created_on', 'completed_on', 'total', 'user_payment')
+        fields = ('id', 'products', 'address', 'created_on', 'completed_on', 'total', 'user_payment')
         depth = 3
 
 

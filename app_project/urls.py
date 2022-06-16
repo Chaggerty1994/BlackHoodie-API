@@ -25,12 +25,18 @@ from app_api.views import SizeView
 from app_api.views import UserPaymentView
 from django.conf.urls.static import static
 from django.conf import settings
+from django.contrib.auth.models import User
+
+from app_api.views.user_view import UserView
+
+
 router = routers.DefaultRouter(trailing_slash=False)
 router.register(r'categories', CategoryView, 'category')
 router.register(r'products', ProductView, 'product')
 router.register(r'orders', OrderView, 'order')
 router.register(r'sizes', SizeView, 'size')
 router.register(r'userpayments', UserPaymentView, 'userpayment')
+router.register(r'users', UserView , 'user')
 
 
 
@@ -38,5 +44,6 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('register', register_user),
     path('login', login_user),
+    
     path('', include(router.urls)),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

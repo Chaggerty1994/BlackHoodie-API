@@ -9,10 +9,10 @@ from rest_framework.exceptions import ValidationError
 from app_api.models import Product, Order
 from app_api.serializers import ProductSerializer
 from app_api.serializers.order_serializer import UpdateOrderSerializer
-
+from rest_framework.permissions import AllowAny
 
 class ProductView(ViewSet):
-
+    permission_classes = [AllowAny]
     def list(self, request):
         """Get a list of all products"""
         products = Product.objects.all()
