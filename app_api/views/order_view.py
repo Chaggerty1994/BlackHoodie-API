@@ -5,7 +5,7 @@ from rest_framework import status
 from rest_framework.decorators import action
 
 from app_api.models import Order, UserPayment
-from app_api.models.order_product import OrderProduct
+
 from app_api.serializers import OrderSerializer
 
 
@@ -38,12 +38,15 @@ class OrderView(ViewSet):
         try:
             order = Order.objects.create( user=request.auth.user)
             order.products.add(*request.data["products"])
+            address=request.data["address"]
             user_payment = UserPayment.objects.get(
                 pk=request.data['userPaymentId'], user=request.auth.user)
             order.user_payment = user_payment
+            order.address = address
             order.completed_on = datetime.now()
             order.save()
-            return Response({'message': "Order Completed"})
+            serializer = OrderSerializer(order)
+            return Response(serializer.data)
         except (Order.DoesNotExist, UserPayment.DoesNotExist) as ex:
             return Response({'message': ex.args[0]}, status=status.HTTP_404_NOT_FOUND)
 
