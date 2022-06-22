@@ -9,4 +9,3 @@ class UserPaymentSerializer(serializers.ModelSerializer):
 class CreatePaymentType(serializers.Serializer):
     card_number = serializers.CharField()
     exp_date = serializers.CharField()
-   

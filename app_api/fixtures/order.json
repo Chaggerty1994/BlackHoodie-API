@@ -4,10 +4,10 @@
         "pk": 1,
         "fields": {
             "user_payment": 1,
-            "user": 7,
+            "user": 2,
             "created_on": "2020-08-29T13:24:27",
             "completed_on": "2020-09-01T10:24:27",
-            "products": [1,2,3],
+            "product_size": [1,2],
             "address": "12 DingyDoo Lane, Clarksville Tn 37043"
         }
     },
@@ -20,7 +20,7 @@
             "user": 2,
             "created_on": "2020-05-14T13:24:27",
             "completed_on": "2020-05-16T10:24:27",
-            "products": [1],
+            "product_size": [1],
             "address": "10 Louise Lane, Nashville Tn 37143"
         }
     },
@@ -33,7 +33,7 @@
             "user": 3,
             "created_on": "2020-08-22T13:24:27",
             "completed_on": "2020-08-23T10:24:27",
-            "products": [4],
+            "product_size": [2],
             "address": "1 BigTiny Lane, Clarksville Tn 37043"
         }
     },
@@ -46,7 +46,7 @@
             "user": 4,
             "created_on": "2020-03-29T13:24:27",
             "completed_on": "2020-04-01T10:24:27",
-            "products": [1,3],
+            "product_size": [1],
             "address": "12 Suiter road, Clarksville Tn 37043"
         }
     }

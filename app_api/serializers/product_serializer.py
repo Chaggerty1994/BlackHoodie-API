@@ -5,7 +5,7 @@ from app_api.models import Product
 class ProductSerializer(serializers.ModelSerializer):
     class Meta:
         model = Product
-        fields = ('id', 'title', 'price', 'category','size', 'image_path')
+        fields = ('id', 'title', 'price', 'category', 'image_path')
         depth = 2
 
 class UpdateProductSerializer(serializers.ModelSerializer):

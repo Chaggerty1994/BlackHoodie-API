@@ -4,3 +4,4 @@ from .product_serializer import ProductSerializer
 from .size_serializer import SizeSerializer
 from .user_payment_serializer import UserPaymentSerializer
 from .user_serializer import UserSerializer
+from .product_size_serializer import ProductSizeSerializer

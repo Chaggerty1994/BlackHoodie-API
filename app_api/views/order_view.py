@@ -37,7 +37,7 @@ class OrderView(ViewSet):
         """
         try:
             order = Order.objects.create( user=request.auth.user)
-            order.products.add(*request.data["products"])
+            order.product_size.add(*request.data["product_size"])
             address=request.data["address"]
             user_payment = UserPayment.objects.get(
                 pk=request.data['userPaymentId'], user=request.auth.user)

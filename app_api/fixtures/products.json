@@ -6,7 +6,6 @@
             "title": "Kafka is famous",
             "price": 40.00,
             "category": 5,
-            "size": 3,
             "image_path": "products/KAFKA.jpg"
         }
 
@@ -19,7 +18,6 @@
             "title": "Scribbles In July",
             "price": 40.00,
             "category": 5,
-            "size": 3,
             "image_path": "products/scribble.jpg"
         }
 
@@ -32,7 +30,6 @@
             "title": "Tha Godfather",
             "price": 40.00,
             "category": 3,
-            "size": 3,
             "image_path": "products/ThaGodfather.jpg"
         }
 
@@ -45,7 +42,6 @@
             "title": "NYNY",
             "price": 40.00,
             "category": 4,
-            "size": 3,
             "image_path": "products/NYNY.jpg"
         }
 
@@ -58,7 +54,6 @@
             "title": "Into Tha Void",
             "price": 40.00,
             "category": 3,
-            "size": 3,
             "image_path": "products/techgirl.jpg"
         }
 
@@ -70,8 +65,7 @@
         "fields": {
             "title": "Flux Dominion",
             "price": 40.00,
-            "category": 4,
-            "size": 3,
+            "category": 4, 
             "image_path": "products/FluxDominion.jpg"
         }
 
@@ -84,7 +78,6 @@
             "title": "Vastness",
             "price": 40.00,
             "category": 1,
-            "size": 3,
             "image_path": "products/vastness.jpg"
         }
 

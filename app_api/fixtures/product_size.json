@@ -1,0 +1,21 @@
+[
+    {
+        "model": "app_api.productsize",
+        "pk": 1,
+        "fields": {
+            "product": 1,
+            "size": 1
+        }
+    },
+
+    {
+        "model": "app_api.productsize",
+        "pk": 2,
+        "fields": {
+            "product": 2,
+            "size": 4
+        }
+    }
+
+
+]

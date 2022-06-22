@@ -8,8 +8,8 @@ class Order(models.Model):
         User, on_delete=models.CASCADE, related_name='orders')
     created_on = models.DateTimeField(auto_now_add=True)
     completed_on = models.DateTimeField(null=True, blank=True)
-    products = models.ManyToManyField(
-        "Product", through="OrderProduct", related_name='orders')
+    product_size = models.ManyToManyField(
+        "ProductSize", through="OrderProduct", related_name='orders')
     address = models.CharField(max_length=500)
 
     @property
