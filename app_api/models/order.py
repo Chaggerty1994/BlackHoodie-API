@@ -21,6 +21,11 @@ class Order(models.Model):
         """
         return sum([p.price for p in self.products.all()], 0)
 
+    @property
+    def date(self):
+       
+        return self.created_on.strftime("%m/%d/%y")
+
     def __str__(self):
         is_open = 'Completed' if self.completed_on else 'Open'
         return f'{is_open} order for {self.user.get_full_name()}'

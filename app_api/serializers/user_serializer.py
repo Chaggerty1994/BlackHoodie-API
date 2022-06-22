@@ -1,11 +1,15 @@
 from rest_framework import serializers
 from django.contrib.auth.models import User
 
+from app_api.serializers.order_serializer import OrderSerializer
+
+
+
 
 
 
 class UserSerializer(serializers.ModelSerializer):
-   
+    orders = OrderSerializer(many=True)
     class Meta:
         model = User
         fields = ('username', 'first_name', 'last_name', 'orders')

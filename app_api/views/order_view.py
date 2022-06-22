@@ -64,3 +64,12 @@ class OrderView(ViewSet):
                 'message': 'You do not have an open order. Add a product to the cart to get started'},
                 status=status.HTTP_404_NOT_FOUND
             )
+
+    def retrieve(self, request, pk):
+        """Get a single product"""
+        try:
+            order = Order.objects.get(pk=pk)
+            serializer = OrderSerializer(order)
+            return Response(serializer.data)
+        except Order.DoesNotExist as ex:
+            return Response({'message': ex.args[0]}, status=status.HTTP_404_NOT_FOUND)

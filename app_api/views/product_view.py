@@ -11,6 +11,8 @@ from app_api.serializers import ProductSerializer
 from app_api.serializers.order_serializer import UpdateOrderSerializer
 from rest_framework.permissions import AllowAny
 
+from app_api.serializers.product_serializer import UpdateProductSerializer
+
 class ProductView(ViewSet):
     permission_classes = [AllowAny]
     def list(self, request):
@@ -36,6 +38,15 @@ class ProductView(ViewSet):
             return Response(serializer.data)
         except Product.DoesNotExist as ex:
             return Response({'message': ex.args[0]}, status=status.HTTP_404_NOT_FOUND)
+
+    def update(self, request, pk):
+  
+        product = Product.objects.get(pk=pk)
+        serializer = UpdateProductSerializer(product, data=request.data)
+        serializer.is_valid(raise_exception=True)
+        serializer.save()
+        return Response(None, status=status.HTTP_204_NO_CONTENT)
+
 
     @action(methods=['post'], detail=True)
     def add_to_order(self, request, pk):
