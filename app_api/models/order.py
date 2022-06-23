@@ -19,7 +19,7 @@ class Order(models.Model):
         Returns:
             float: The sum of the product prices on the order
         """
-        return sum([p.price for p in self.products.all()], 0)
+        return sum([p.product.price for p in self.product_size.all()], 0)
 
     @property
     def date(self):

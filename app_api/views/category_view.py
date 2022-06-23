@@ -3,10 +3,10 @@ from rest_framework.response import Response
 from app_api import serializers
 from app_api.models import Category
 from app_api.serializers import CategorySerializer
-
+from rest_framework.permissions import AllowAny
 
 class CategoryView(ViewSet):
-
+    permission_classes = [AllowAny]
     def list(self, request):
         """Get a list of categories
         """
@@ -18,4 +18,3 @@ class CategoryView(ViewSet):
         category = Category.get(pk=pk)
         serializer = CategorySerializer(category)
         return Response(serializer.data)
-        
