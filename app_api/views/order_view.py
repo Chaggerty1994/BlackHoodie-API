@@ -4,15 +4,13 @@ from rest_framework.response import Response
 from rest_framework import status
 from rest_framework.decorators import action
 
-from app_api.models import Order, UserPayment
+from app_api.models import Order, UserPayment, ProductSize
 
 from app_api.serializers import OrderSerializer
 
 
-
 class OrderView(ViewSet):
 
-   
     def list(self, request):
         """Get a list of the current users orders
         """
@@ -20,7 +18,6 @@ class OrderView(ViewSet):
         serializer = OrderSerializer(orders, many=True)
         return Response(serializer.data)
 
-    
     def destroy(self, request, pk):
         """Delete an order, current user must be associated with the order to be deleted
         """
@@ -36,9 +33,15 @@ class OrderView(ViewSet):
         """Complete an order by adding a payment type and completed data
         """
         try:
-            order = Order.objects.create( user=request.auth.user)
-            order.product_size.add(*request.data["product_size"])
-            address=request.data["address"]
+            order = Order.objects.create(user=request.auth.user)
+            # loop through product size array
+            for ps in request.data["product_size"]:
+                # create product size object
+                product_size = ProductSize.objects.create(product_id=ps["product"]["id"], size_id=ps["size"]["id"])
+                # order.product_size.add
+                order.product_size.add(product_size)
+
+            address = request.data["address"]
             user_payment = UserPayment.objects.get(
                 pk=request.data['userPaymentId'], user=request.auth.user)
             order.user_payment = user_payment
@@ -50,7 +53,6 @@ class OrderView(ViewSet):
         except (Order.DoesNotExist, UserPayment.DoesNotExist) as ex:
             return Response({'message': ex.args[0]}, status=status.HTTP_404_NOT_FOUND)
 
-    
     @action(methods=['get'], detail=False)
     def current(self, request):
         """Get the user's current order"""
